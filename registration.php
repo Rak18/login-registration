@@ -54,6 +54,7 @@ if (isset($_SESSION["user"])) {
            }else{
             
             $sql = "INSERT INTO users (full_name, email, password) VALUES ( ?, ?, ? )";
+            //The stmt_init() / mysqli_stmt_init() function initializes a statement and returns an object suitable for mysqli_stmt_prepare().
             $stmt = mysqli_stmt_init($conn);
             $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
             if ($prepareStmt) {
